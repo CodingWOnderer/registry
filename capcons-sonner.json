@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-sonner",
+  "title": "sonner",
+  "description": "CapCons-enabled shadcn/ui v4 sonner (vendored new-york).",
+  "dependencies": [
+    "sonner",
+    "next-themes",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/sonner.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/sonner.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport { CircleCheckIcon, InfoIcon, Loader2Icon, OctagonXIcon, TriangleAlertIcon } from \"lucide-react\";\nimport { useTheme } from \"next-themes\";\nimport { Toaster as Sonner } from \"sonner\";\nimport type { ToasterProps } from \"sonner\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nconst Toaster = ({\n  ...props\n}: ToasterProps & CapconsBasePropsLoose) => {\n  const {\n    theme = \"system\"\n  } = useTheme();\n  return <Sonner theme={theme as ToasterProps[\"theme\"]} className=\"toaster group\" icons={{\n    success: <CircleCheckIcon className=\"size-4\" />,\n    info: <InfoIcon className=\"size-4\" />,\n    warning: <TriangleAlertIcon className=\"size-4\" />,\n    error: <OctagonXIcon className=\"size-4\" />,\n    loading: <Loader2Icon className=\"size-4 animate-spin\" />\n  }} style={{\n    \"--normal-bg\": \"var(--popover)\",\n    \"--normal-text\": \"var(--popover-foreground)\",\n    \"--normal-border\": \"var(--border)\",\n    \"--border-radius\": \"var(--radius)\"\n  } as React.CSSProperties} {...capconsSpread(props)} />;\n};\nexport { Toaster };\n",
+      "type": "registry:ui",
+      "target": "@ui/sonner.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "sonner",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/sonner.tsx"
+  },
+  "type": "registry:ui"
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-switch",
+  "title": "switch",
+  "description": "CapCons-enabled shadcn/ui v4 switch (vendored new-york).",
+  "dependencies": [
+    "radix-ui",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/switch.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/switch.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport { Switch as SwitchPrimitive } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nfunction Switch({\n  className,\n  size = \"default\",\n  ...props\n}: React.ComponentProps<typeof SwitchPrimitive.Root> & {\n  size?: \"sm\" | \"default\";\n} & CapconsBasePropsLoose) {\n  return <SwitchPrimitive.Root data-slot=\"switch\" data-size={size} className={cn(\"peer group/switch inline-flex shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-[1.15rem] data-[size=default]:w-8 data-[size=sm]:h-3.5 data-[size=sm]:w-6 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input dark:data-[state=unchecked]:bg-input/80\", className)} {...capconsSpread(props)}>\n      <SwitchPrimitive.Thumb data-slot=\"switch-thumb\" className={cn(\"pointer-events-none block rounded-full bg-background ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0 dark:data-[state=checked]:bg-primary-foreground dark:data-[state=unchecked]:bg-foreground\")} />\n    </SwitchPrimitive.Root>;\n}\nexport { Switch };\n",
+      "type": "registry:ui",
+      "target": "@ui/switch.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "switch",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/switch.tsx"
+  },
+  "type": "registry:ui"
+}

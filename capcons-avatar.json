@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-avatar",
+  "title": "avatar",
+  "description": "CapCons-enabled shadcn/ui v4 avatar (vendored new-york).",
+  "dependencies": [
+    "radix-ui",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/avatar.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/avatar.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport { Avatar as AvatarPrimitive } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nfunction Avatar({\n  className,\n  size = \"default\",\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Root> & {\n  size?: \"default\" | \"sm\" | \"lg\";\n} & CapconsBasePropsLoose) {\n  return <AvatarPrimitive.Root data-slot=\"avatar\" data-size={size} className={cn(\"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6\", className)} {...capconsSpread(props)} />;\n}\nfunction AvatarImage({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Image> & CapconsBasePropsLoose) {\n  return <AvatarPrimitive.Image data-slot=\"avatar-image\" className={cn(\"aspect-square size-full\", className)} {...capconsSpread(props)} />;\n}\nfunction AvatarFallback({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Fallback> & CapconsBasePropsLoose) {\n  return <AvatarPrimitive.Fallback data-slot=\"avatar-fallback\" className={cn(\"flex size-full items-center justify-center rounded-full bg-muted text-sm text-muted-foreground group-data-[size=sm]/avatar:text-xs\", className)} {...capconsSpread(props)} />;\n}\nfunction AvatarBadge({\n  className,\n  ...props\n}: React.ComponentProps<\"span\"> & CapconsBasePropsLoose) {\n  return <span data-slot=\"avatar-badge\" className={cn(\"absolute right-0 bottom-0 z-10 inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground ring-2 ring-background select-none\", \"group-data-[size=sm]/avatar:size-2 group-data-[size=sm]/avatar:[&>svg]:hidden\", \"group-data-[size=default]/avatar:size-2.5 group-data-[size=default]/avatar:[&>svg]:size-2\", \"group-data-[size=lg]/avatar:size-3 group-data-[size=lg]/avatar:[&>svg]:size-2\", className)} {...capconsSpread(props)} />;\n}\nfunction AvatarGroup({\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & CapconsBasePropsLoose) {\n  return <div data-slot=\"avatar-group\" className={cn(\"group/avatar-group flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background\", className)} {...capconsSpread(props)} />;\n}\nfunction AvatarGroupCount({\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & CapconsBasePropsLoose) {\n  return <div data-slot=\"avatar-group-count\" className={cn(\"relative flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm text-muted-foreground ring-2 ring-background group-has-data-[size=lg]/avatar-group:size-10 group-has-data-[size=sm]/avatar-group:size-6 [&>svg]:size-4 group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 group-has-data-[size=sm]/avatar-group:[&>svg]:size-3\", className)} {...capconsSpread(props)} />;\n}\nexport { Avatar, AvatarImage, AvatarFallback, AvatarBadge, AvatarGroup, AvatarGroupCount };\n",
+      "type": "registry:ui",
+      "target": "@ui/avatar.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "avatar",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/avatar.tsx"
+  },
+  "type": "registry:ui"
+}

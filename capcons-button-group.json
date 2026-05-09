@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-button-group",
+  "title": "button-group",
+  "description": "CapCons-enabled shadcn/ui v4 button-group (vendored new-york).",
+  "dependencies": [
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib",
+    "@capcons/button",
+    "@capcons/separator"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/button-group.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/button-group.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\nimport { cva } from \"class-variance-authority\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { Separator } from \"@/components/ui/separator\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nconst buttonGroupVariants = cva(\"flex w-fit items-stretch has-[>[data-slot=button-group]]:gap-2 [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1\", {\n  variants: {\n    orientation: {\n      horizontal: \"[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none\",\n      vertical: \"flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none\"\n    }\n  },\n  defaultVariants: {\n    orientation: \"horizontal\"\n  }\n});\nfunction ButtonGroup({\n  className,\n  orientation,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof buttonGroupVariants> & CapconsBasePropsLoose) {\n  return <div role=\"group\" data-slot=\"button-group\" data-orientation={orientation} className={cn(buttonGroupVariants({\n    orientation\n  }), className)} {...capconsSpread(props)} />;\n}\nfunction ButtonGroupText({\n  className,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  asChild?: boolean;\n} & CapconsBasePropsLoose) {\n  const Comp = asChild ? Slot.Root : \"div\";\n  return <Comp className={cn(\"flex items-center gap-2 rounded-md border bg-muted px-4 text-sm font-medium shadow-xs [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4\", className)} {...capconsSpread(props)} />;\n}\nfunction ButtonGroupSeparator({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: React.ComponentProps<typeof Separator>) {\n  return <Separator data-slot=\"button-group-separator\" orientation={orientation} className={cn(\"relative m-0! self-stretch bg-input data-[orientation=vertical]:h-auto\", className)} {...props} />;\n}\nexport { ButtonGroup, ButtonGroupSeparator, ButtonGroupText, buttonGroupVariants };\n",
+      "type": "registry:ui",
+      "target": "@ui/button-group.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "button-group",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/button-group.tsx"
+  },
+  "type": "registry:ui"
+}

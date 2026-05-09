@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-table",
+  "title": "table",
+  "description": "CapCons-enabled shadcn/ui v4 table (vendored new-york).",
+  "dependencies": [
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/table.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/table.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nfunction Table({\n  className,\n  ...props\n}: React.ComponentProps<\"table\"> & CapconsBasePropsLoose) {\n  return <div data-slot=\"table-container\" className=\"relative w-full overflow-x-auto\">\n      <table data-slot=\"table\" className={cn(\"w-full caption-bottom text-sm\", className)} {...capconsSpread(props)} />\n    </div>;\n}\nfunction TableHeader({\n  className,\n  ...props\n}: React.ComponentProps<\"thead\"> & CapconsBasePropsLoose) {\n  return <thead data-slot=\"table-header\" className={cn(\"[&_tr]:border-b\", className)} {...capconsSpread(props)} />;\n}\nfunction TableBody({\n  className,\n  ...props\n}: React.ComponentProps<\"tbody\"> & CapconsBasePropsLoose) {\n  return <tbody data-slot=\"table-body\" className={cn(\"[&_tr:last-child]:border-0\", className)} {...capconsSpread(props)} />;\n}\nfunction TableFooter({\n  className,\n  ...props\n}: React.ComponentProps<\"tfoot\"> & CapconsBasePropsLoose) {\n  return <tfoot data-slot=\"table-footer\" className={cn(\"border-t bg-muted/50 font-medium [&>tr]:last:border-b-0\", className)} {...capconsSpread(props)} />;\n}\nfunction TableRow({\n  className,\n  ...props\n}: React.ComponentProps<\"tr\"> & CapconsBasePropsLoose) {\n  return <tr data-slot=\"table-row\" className={cn(\"border-b transition-colors hover:bg-muted/50 has-aria-expanded:bg-muted/50 data-[state=selected]:bg-muted\", className)} {...capconsSpread(props)} />;\n}\nfunction TableHead({\n  className,\n  ...props\n}: React.ComponentProps<\"th\"> & CapconsBasePropsLoose) {\n  return <th data-slot=\"table-head\" className={cn(\"h-10 px-2 text-left align-middle font-medium whitespace-nowrap text-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]\", className)} {...capconsSpread(props)} />;\n}\nfunction TableCell({\n  className,\n  ...props\n}: React.ComponentProps<\"td\"> & CapconsBasePropsLoose) {\n  return <td data-slot=\"table-cell\" className={cn(\"p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]\", className)} {...capconsSpread(props)} />;\n}\nfunction TableCaption({\n  className,\n  ...props\n}: React.ComponentProps<\"caption\"> & CapconsBasePropsLoose) {\n  return <caption data-slot=\"table-caption\" className={cn(\"mt-4 text-sm text-muted-foreground\", className)} {...capconsSpread(props)} />;\n}\nexport { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption };\n",
+      "type": "registry:ui",
+      "target": "@ui/table.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "table",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/table.tsx"
+  },
+  "type": "registry:ui"
+}

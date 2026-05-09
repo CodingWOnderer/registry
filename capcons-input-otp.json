@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-input-otp",
+  "title": "input-otp",
+  "description": "CapCons-enabled shadcn/ui v4 input-otp (vendored new-york).",
+  "dependencies": [
+    "input-otp",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/input-otp.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/input-otp.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport { OTPInput, OTPInputContext } from \"input-otp\";\nimport { MinusIcon } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nfunction InputOTP({\n  className,\n  containerClassName,\n  ...props\n}: React.ComponentProps<typeof OTPInput> & {\n  containerClassName?: string;\n}) {\n  return <OTPInput data-slot=\"input-otp\" containerClassName={cn(\"flex items-center gap-2 has-disabled:opacity-50\", containerClassName)} className={cn(\"disabled:cursor-not-allowed\", className)} {...props} />;\n}\nfunction InputOTPGroup({\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & CapconsBasePropsLoose) {\n  return <div data-slot=\"input-otp-group\" className={cn(\"flex items-center\", className)} {...capconsSpread(props)} />;\n}\nfunction InputOTPSlot({\n  index,\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  index: number;\n} & CapconsBasePropsLoose) {\n  const inputOTPContext = React.useContext(OTPInputContext);\n  const {\n    char,\n    hasFakeCaret,\n    isActive\n  } = inputOTPContext?.slots[index] ?? {};\n  return <div data-slot=\"input-otp-slot\" data-active={isActive} className={cn(\"relative flex h-9 w-9 items-center justify-center border-y border-r border-input text-sm shadow-xs transition-all outline-none first:rounded-l-md first:border-l last:rounded-r-md aria-invalid:border-destructive data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:ring-[3px] data-[active=true]:ring-ring/50 data-[active=true]:aria-invalid:border-destructive data-[active=true]:aria-invalid:ring-destructive/20 dark:bg-input/30 dark:data-[active=true]:aria-invalid:ring-destructive/40\", className)} {...capconsSpread(props)}>\n      {char}\n      {hasFakeCaret && <div className=\"pointer-events-none absolute inset-0 flex items-center justify-center\">\n          <div className=\"h-4 w-px animate-caret-blink bg-foreground duration-1000\" />\n        </div>}\n    </div>;\n}\nfunction InputOTPSeparator({\n  ...props\n}: React.ComponentProps<\"div\"> & CapconsBasePropsLoose) {\n  return <div data-slot=\"input-otp-separator\" role=\"separator\" {...capconsSpread(props)}>\n      <MinusIcon />\n    </div>;\n}\nexport { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator };\n",
+      "type": "registry:ui",
+      "target": "@ui/input-otp.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "input-otp",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/input-otp.tsx"
+  },
+  "type": "registry:ui"
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-lib",
+  "title": "CapCons helpers",
+  "description": "Shared capconsSpread(), shadcn utils (cn), and use-mobile hook for CapCons-enabled components.",
+  "dependencies": [
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/lib/capcons-spread.ts",
+      "content": "import { capconsDataProps, stripCapconsProps, type CapconsBaseProps, type CapconsBasePropsLoose } from \"@capcons/sdk/components\";\n\n/**\n * Split CapCons authoring props from a React prop bag: remove JSX-only keys and append `data-capcons-*`\n * attributes suitable for the **root** DOM node of a primitive (Radix slot, intrinsic element, etc.).\n *\n * Typed as `any` on purpose so Radix/shadcn **discriminated unions** on the caller survive `Omit`/`Pick`\n * (e.g. Accordion vs ToggleGroup variants). The returned object is still `{ ...hostProps, ...dataAttrs }`.\n *\n * @param source - Component props that intersect {@link CapconsBasePropsLoose} with the host component.\n * @returns A spreadable object: non-CapCons props plus serialized `data-capcons-*` entries.\n *\n * @example Button as section root\n * ```tsx\n * function Button(p: React.ComponentProps<'button'> & CapconsBasePropsLoose) {\n *   return <button type=\"button\" {...capconsSpread(p)} />;\n * }\n *\n * <Button section sectionLabel=\"Hero\" capconsCapabilities=\"duplicate,delete\">Save</Button>\n * ```\n */\nexport function capconsSpread<P extends CapconsBasePropsLoose & Record<string, unknown>>(source: P) {\n  const c = source;\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- preserve caller unions for JSX spreads\n  return { ...stripCapconsProps(c), ...capconsDataProps(c) } as any;\n}\n\nexport type { CapconsBaseProps, CapconsBasePropsLoose };\n",
+      "type": "registry:lib",
+      "target": "@lib/capcons-spread.ts"
+    },
+    {
+      "path": "registry/new-york/capcons/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib",
+      "target": "@lib/utils.ts"
+    },
+    {
+      "path": "registry/new-york/capcons/hooks/use-mobile.ts",
+      "content": "import * as React from \"react\"\n\nconst MOBILE_BREAKPOINT = 768\n\nexport function useIsMobile() {\n  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined)\n\n  React.useEffect(() => {\n    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`)\n    const onChange = () => {\n      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)\n    }\n    mql.addEventListener(\"change\", onChange)\n    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)\n    return () => mql.removeEventListener(\"change\", onChange)\n  }, [])\n\n  return !!isMobile\n}\n",
+      "type": "registry:hook",
+      "target": "@hooks/use-mobile.ts"
+    }
+  ],
+  "type": "registry:lib"
+}

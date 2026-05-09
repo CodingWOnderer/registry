@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-popover",
+  "title": "popover",
+  "description": "CapCons-enabled shadcn/ui v4 popover (vendored new-york).",
+  "dependencies": [
+    "radix-ui",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/popover.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/popover.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport { Popover as PopoverPrimitive } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nfunction Popover({\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Root> & CapconsBasePropsLoose) {\n  return <PopoverPrimitive.Root data-slot=\"popover\" {...capconsSpread(props)} />;\n}\nfunction PopoverTrigger({\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Trigger> & CapconsBasePropsLoose) {\n  return <PopoverPrimitive.Trigger data-slot=\"popover-trigger\" {...capconsSpread(props)} />;\n}\nfunction PopoverContent({\n  className,\n  align = \"center\",\n  sideOffset = 4,\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Content> & CapconsBasePropsLoose) {\n  return <PopoverPrimitive.Portal>\n      <PopoverPrimitive.Content data-slot=\"popover-content\" align={align} sideOffset={sideOffset} className={cn(\"z-50 w-72 origin-(--radix-popover-content-transform-origin) rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-hidden data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95\", className)} {...capconsSpread(props)} />\n    </PopoverPrimitive.Portal>;\n}\nfunction PopoverAnchor({\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Anchor> & CapconsBasePropsLoose) {\n  return <PopoverPrimitive.Anchor data-slot=\"popover-anchor\" {...capconsSpread(props)} />;\n}\nfunction PopoverHeader({\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & CapconsBasePropsLoose) {\n  return <div data-slot=\"popover-header\" className={cn(\"flex flex-col gap-1 text-sm\", className)} {...capconsSpread(props)} />;\n}\nfunction PopoverTitle({\n  className,\n  ...props\n}: React.ComponentProps<\"h2\"> & CapconsBasePropsLoose) {\n  return <div data-slot=\"popover-title\" className={cn(\"font-medium\", className)} {...capconsSpread(props)} />;\n}\nfunction PopoverDescription({\n  className,\n  ...props\n}: React.ComponentProps<\"p\"> & CapconsBasePropsLoose) {\n  return <p data-slot=\"popover-description\" className={cn(\"text-muted-foreground\", className)} {...capconsSpread(props)} />;\n}\nexport { Popover, PopoverTrigger, PopoverContent, PopoverAnchor, PopoverHeader, PopoverTitle, PopoverDescription };\n",
+      "type": "registry:ui",
+      "target": "@ui/popover.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "popover",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/popover.tsx"
+  },
+  "type": "registry:ui"
+}

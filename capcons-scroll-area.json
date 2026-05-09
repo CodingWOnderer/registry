@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-scroll-area",
+  "title": "scroll-area",
+  "description": "CapCons-enabled shadcn/ui v4 scroll-area (vendored new-york).",
+  "dependencies": [
+    "radix-ui",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/scroll-area.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/scroll-area.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport { ScrollArea as ScrollAreaPrimitive } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nfunction ScrollArea({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof ScrollAreaPrimitive.Root> & CapconsBasePropsLoose) {\n  return <ScrollAreaPrimitive.Root data-slot=\"scroll-area\" className={cn(\"relative\", className)} {...capconsSpread(props)}>\n      <ScrollAreaPrimitive.Viewport data-slot=\"scroll-area-viewport\" className=\"size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1\">\n        {children}\n      </ScrollAreaPrimitive.Viewport>\n      <ScrollBar />\n      <ScrollAreaPrimitive.Corner />\n    </ScrollAreaPrimitive.Root>;\n}\nfunction ScrollBar({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar> & CapconsBasePropsLoose) {\n  return <ScrollAreaPrimitive.ScrollAreaScrollbar data-slot=\"scroll-area-scrollbar\" orientation={orientation} className={cn(\"flex touch-none p-px transition-colors select-none\", orientation === \"vertical\" && \"h-full w-2.5 border-l border-l-transparent\", orientation === \"horizontal\" && \"h-2.5 flex-col border-t border-t-transparent\", className)} {...capconsSpread(props)}>\n      <ScrollAreaPrimitive.ScrollAreaThumb data-slot=\"scroll-area-thumb\" className=\"relative flex-1 rounded-full bg-border\" />\n    </ScrollAreaPrimitive.ScrollAreaScrollbar>;\n}\nexport { ScrollArea, ScrollBar };\n",
+      "type": "registry:ui",
+      "target": "@ui/scroll-area.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "scroll-area",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/scroll-area.tsx"
+  },
+  "type": "registry:ui"
+}

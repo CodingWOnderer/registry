@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-form",
+  "title": "form",
+  "description": "CapCons-enabled shadcn/ui v4 form (vendored new-york).",
+  "dependencies": [
+    "radix-ui",
+    "@hookform/resolvers",
+    "zod",
+    "react-hook-form",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib",
+    "@capcons/button",
+    "@capcons/label"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/form.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/form.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport type { Label as LabelPrimitive } from \"radix-ui\";\nimport { Slot } from \"radix-ui\";\nimport { Controller, FormProvider, useFormContext, useFormState } from \"react-hook-form\";\nimport type { ControllerProps, FieldPath, FieldValues } from \"react-hook-form\";\nimport { cn } from \"@/lib/utils\";\nimport { Label } from \"@/components/ui/label\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nconst Form = FormProvider;\ntype FormFieldContextValue<TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>> = {\n  name: TName;\n};\nconst FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);\nconst FormField = <TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>({\n  ...props\n}: ControllerProps<TFieldValues, TName>) => {\n  return <FormFieldContext.Provider value={{\n    name: props.name\n  }}>\n      <Controller {...props} />\n    </FormFieldContext.Provider>;\n};\nconst useFormField = () => {\n  const fieldContext = React.useContext(FormFieldContext);\n  const itemContext = React.useContext(FormItemContext);\n  const {\n    getFieldState\n  } = useFormContext();\n  const formState = useFormState({\n    name: fieldContext.name\n  });\n  const fieldState = getFieldState(fieldContext.name, formState);\n  if (!fieldContext) {\n    throw new Error(\"useFormField should be used within <FormField>\");\n  }\n  const {\n    id\n  } = itemContext;\n  return {\n    id,\n    name: fieldContext.name,\n    formItemId: `${id}-form-item`,\n    formDescriptionId: `${id}-form-item-description`,\n    formMessageId: `${id}-form-item-message`,\n    ...fieldState\n  };\n};\ntype FormItemContextValue = {\n  id: string;\n};\nconst FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);\nfunction FormItem({\n  className,\n  ...props\n}: React.ComponentProps<\"div\"> & CapconsBasePropsLoose) {\n  const id = React.useId();\n  return <FormItemContext.Provider value={{\n    id\n  }}>\n      <div data-slot=\"form-item\" className={cn(\"grid gap-2\", className)} {...capconsSpread(props)} />\n    </FormItemContext.Provider>;\n}\nfunction FormLabel({\n  className,\n  ...props\n}: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  const {\n    error,\n    formItemId\n  } = useFormField();\n  return <Label data-slot=\"form-label\" data-error={!!error} className={cn(\"data-[error=true]:text-destructive\", className)} htmlFor={formItemId} {...props} />;\n}\nfunction FormControl({\n  ...props\n}: React.ComponentProps<typeof Slot.Root> & CapconsBasePropsLoose) {\n  const {\n    error,\n    formItemId,\n    formDescriptionId,\n    formMessageId\n  } = useFormField();\n  return <Slot.Root data-slot=\"form-control\" id={formItemId} aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`} aria-invalid={!!error} {...capconsSpread(props)} />;\n}\nfunction FormDescription({\n  className,\n  ...props\n}: React.ComponentProps<\"p\"> & CapconsBasePropsLoose) {\n  const {\n    formDescriptionId\n  } = useFormField();\n  return <p data-slot=\"form-description\" id={formDescriptionId} className={cn(\"text-sm text-muted-foreground\", className)} {...capconsSpread(props)} />;\n}\nfunction FormMessage({\n  className,\n  ...props\n}: React.ComponentProps<\"p\"> & CapconsBasePropsLoose) {\n  const {\n    error,\n    formMessageId\n  } = useFormField();\n  const body = error ? String(error?.message ?? \"\") : props.children;\n  if (!body) {\n    return null;\n  }\n  return <p data-slot=\"form-message\" id={formMessageId} className={cn(\"text-sm text-destructive\", className)} {...capconsSpread(props)}>\n      {body}\n    </p>;\n}\nexport { useFormField, Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormField };\n",
+      "type": "registry:ui",
+      "target": "@ui/form.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "form",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/form.tsx"
+  },
+  "type": "registry:ui"
+}

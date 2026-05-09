@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "capcons-toggle-group",
+  "title": "toggle-group",
+  "description": "CapCons-enabled shadcn/ui v4 toggle-group (vendored new-york).",
+  "dependencies": [
+    "radix-ui",
+    "@capcons/sdk",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "@capcons/lib",
+    "@capcons/toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/capcons/ui/toggle-group.tsx",
+      "content": "/**\n * Vendored from shadcn-ui/ui apps/v4/registry/new-york-v4/ui/toggle-group.tsx + CapCons.\n */\n/**\n * CapCons-enabled shadcn/ui primitive (vendored New York v4) with `capconsSpread` on the root.\n *\n * **Props:** Cross-cutting authoring fields are documented on `CapconsBasePropsLoose` /\n * `CapconsGlobalAuthoring` / `CapconsSectionFields` / `CapconsNavFields` in `@capcons/sdk`.\n * Prefer the strict union `CapconsBaseProps` in app code (one role per node: section, nav, surface, or neutral).\n *\n * Put `section` and block tools (`duplicate`, `reorder`, …) on a **wrapper**; inner nodes stay neutral.\n *\n * @example Wrapper block + neutral button\n * ```tsx\n * <div section sectionLabel=\"Hero\" capconsCapabilities={[\"duplicate\", \"reorder\"]}>\n *   <Button type=\"button\" editable=\"text\" capconsKind=\"text\">Save</Button>\n * </div>\n * ```\n *\n * @example Editable label\n * ```tsx\n * <Button type=\"button\" editable=\"text\" capconsKind=\"text\">\n *   Edit me\n * </Button>\n * ```\n */\n\"use client\";\n\nimport * as React from \"react\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { ToggleGroup as ToggleGroupPrimitive } from \"radix-ui\";\nimport { cn } from \"@/lib/utils\";\nimport { toggleVariants } from \"@/components/ui/toggle\";\nimport { capconsSpread } from \"@/lib/capcons-spread\";\nimport type { CapconsBasePropsLoose } from \"@/lib/capcons-spread\";\nconst ToggleGroupContext = React.createContext<VariantProps<typeof toggleVariants> & {\n  spacing?: number;\n}>({\n  size: \"default\",\n  variant: \"default\",\n  spacing: 0\n});\nfunction ToggleGroup({\n  className,\n  variant,\n  size,\n  spacing = 0,\n  children,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Root> & VariantProps<typeof toggleVariants> & {\n  spacing?: number;\n} & CapconsBasePropsLoose) {\n  return <ToggleGroupPrimitive.Root data-slot=\"toggle-group\" data-variant={variant} data-size={size} data-spacing={spacing} style={{\n    \"--gap\": spacing\n  } as React.CSSProperties} className={cn(\"group/toggle-group flex w-fit items-center gap-[--spacing(var(--gap))] rounded-md data-[spacing=default]:data-[variant=outline]:shadow-xs\", className)} {...capconsSpread(props)}>\n      <ToggleGroupContext.Provider value={{\n      variant,\n      size,\n      spacing\n    }}>\n        {children}\n      </ToggleGroupContext.Provider>\n    </ToggleGroupPrimitive.Root>;\n}\nfunction ToggleGroupItem({\n  className,\n  children,\n  variant,\n  size,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Item> & VariantProps<typeof toggleVariants> & CapconsBasePropsLoose) {\n  const context = React.useContext(ToggleGroupContext);\n  return <ToggleGroupPrimitive.Item data-slot=\"toggle-group-item\" data-variant={context.variant || variant} data-size={context.size || size} data-spacing={context.spacing} className={cn(toggleVariants({\n    variant: context.variant || variant,\n    size: context.size || size\n  }), \"w-auto min-w-0 shrink-0 px-3 focus:z-10 focus-visible:z-10\", \"data-[spacing=0]:rounded-none data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-l-md data-[spacing=0]:last:rounded-r-md data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l\", className)} {...capconsSpread(props)}>\n      {children}\n    </ToggleGroupPrimitive.Item>;\n}\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle-group.tsx"
+    }
+  ],
+  "meta": {
+    "upstreamComponent": "toggle-group",
+    "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/toggle-group.tsx"
+  },
+  "type": "registry:ui"
+}

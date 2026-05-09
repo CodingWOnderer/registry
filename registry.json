@@ -1,0 +1,1511 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "capcons",
+  "homepage": "https://github.com/CodingWOnderer/capcons-template-sdk",
+  "items": [
+    {
+      "name": "capcons-lib",
+      "type": "registry:lib",
+      "title": "CapCons helpers",
+      "description": "Shared capconsSpread(), shadcn utils (cn), and use-mobile hook for CapCons-enabled components.",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/lib/capcons-spread.ts",
+          "type": "registry:lib",
+          "target": "@lib/capcons-spread.ts"
+        },
+        {
+          "path": "registry/new-york/capcons/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        },
+        {
+          "path": "registry/new-york/capcons/hooks/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.ts"
+        }
+      ]
+    },
+    {
+      "name": "capcons-accordion",
+      "type": "registry:ui",
+      "title": "accordion",
+      "description": "CapCons-enabled shadcn/ui v4 accordion (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "accordion",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/accordion.tsx"
+      }
+    },
+    {
+      "name": "capcons-alert-dialog",
+      "type": "registry:ui",
+      "title": "alert-dialog",
+      "description": "CapCons-enabled shadcn/ui v4 alert-dialog (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "alert-dialog",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/alert-dialog.tsx"
+      }
+    },
+    {
+      "name": "capcons-alert",
+      "type": "registry:ui",
+      "title": "alert",
+      "description": "CapCons-enabled shadcn/ui v4 alert (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "alert",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/alert.tsx"
+      }
+    },
+    {
+      "name": "capcons-aspect-ratio",
+      "type": "registry:ui",
+      "title": "aspect-ratio",
+      "description": "CapCons-enabled shadcn/ui v4 aspect-ratio (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "@ui/aspect-ratio.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "aspect-ratio",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/aspect-ratio.tsx"
+      }
+    },
+    {
+      "name": "capcons-avatar",
+      "type": "registry:ui",
+      "title": "avatar",
+      "description": "CapCons-enabled shadcn/ui v4 avatar (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "avatar",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/avatar.tsx"
+      }
+    },
+    {
+      "name": "capcons-badge",
+      "type": "registry:ui",
+      "title": "badge",
+      "description": "CapCons-enabled shadcn/ui v4 badge (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "badge",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/badge.tsx"
+      }
+    },
+    {
+      "name": "capcons-breadcrumb",
+      "type": "registry:ui",
+      "title": "breadcrumb",
+      "description": "CapCons-enabled shadcn/ui v4 breadcrumb (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "breadcrumb",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/breadcrumb.tsx"
+      }
+    },
+    {
+      "name": "capcons-button-group",
+      "type": "registry:ui",
+      "title": "button-group",
+      "description": "CapCons-enabled shadcn/ui v4 button-group (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button",
+        "@capcons/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button-group.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "button-group",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/button-group.tsx"
+      }
+    },
+    {
+      "name": "capcons-button",
+      "type": "registry:ui",
+      "title": "button",
+      "description": "CapCons-enabled shadcn/ui v4 button (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "button",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/button.tsx"
+      }
+    },
+    {
+      "name": "capcons-calendar",
+      "type": "registry:ui",
+      "title": "calendar",
+      "description": "CapCons-enabled shadcn/ui v4 calendar (vendored new-york).",
+      "dependencies": [
+        "react-day-picker@latest",
+        "date-fns",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "calendar",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/calendar.tsx"
+      }
+    },
+    {
+      "name": "capcons-card",
+      "type": "registry:ui",
+      "title": "card",
+      "description": "CapCons-enabled shadcn/ui v4 card (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "card",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/card.tsx"
+      }
+    },
+    {
+      "name": "capcons-carousel",
+      "type": "registry:ui",
+      "title": "carousel",
+      "description": "CapCons-enabled shadcn/ui v4 carousel (vendored new-york).",
+      "dependencies": [
+        "embla-carousel-react",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/carousel.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "carousel",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/carousel.tsx"
+      }
+    },
+    {
+      "name": "capcons-chart",
+      "type": "registry:ui",
+      "title": "chart",
+      "description": "CapCons-enabled shadcn/ui v4 chart (vendored new-york).",
+      "dependencies": [
+        "recharts@3.8.0",
+        "lucide-react",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/card"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chart.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "chart",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/chart.tsx"
+      }
+    },
+    {
+      "name": "capcons-checkbox",
+      "type": "registry:ui",
+      "title": "checkbox",
+      "description": "CapCons-enabled shadcn/ui v4 checkbox (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "checkbox",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/checkbox.tsx"
+      }
+    },
+    {
+      "name": "capcons-collapsible",
+      "type": "registry:ui",
+      "title": "collapsible",
+      "description": "CapCons-enabled shadcn/ui v4 collapsible (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "collapsible",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/collapsible.tsx"
+      }
+    },
+    {
+      "name": "capcons-combobox",
+      "type": "registry:ui",
+      "title": "combobox",
+      "description": "CapCons-enabled shadcn/ui v4 combobox (vendored new-york).",
+      "dependencies": [
+        "@base-ui/react",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button",
+        "@capcons/input-group"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "combobox",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/combobox.tsx"
+      }
+    },
+    {
+      "name": "capcons-command",
+      "type": "registry:ui",
+      "title": "command",
+      "description": "CapCons-enabled shadcn/ui v4 command (vendored new-york).",
+      "dependencies": [
+        "cmdk",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "command",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/command.tsx"
+      }
+    },
+    {
+      "name": "capcons-context-menu",
+      "type": "registry:ui",
+      "title": "context-menu",
+      "description": "CapCons-enabled shadcn/ui v4 context-menu (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/context-menu.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "context-menu",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/context-menu.tsx"
+      }
+    },
+    {
+      "name": "capcons-dialog",
+      "type": "registry:ui",
+      "title": "dialog",
+      "description": "CapCons-enabled shadcn/ui v4 dialog (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "dialog",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/dialog.tsx"
+      }
+    },
+    {
+      "name": "capcons-direction",
+      "type": "registry:ui",
+      "title": "direction",
+      "description": "CapCons-enabled shadcn/ui v4 direction (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/direction.tsx",
+          "type": "registry:ui",
+          "target": "@ui/direction.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "direction",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/direction.tsx"
+      }
+    },
+    {
+      "name": "capcons-drawer",
+      "type": "registry:ui",
+      "title": "drawer",
+      "description": "CapCons-enabled shadcn/ui v4 drawer (vendored new-york).",
+      "dependencies": [
+        "vaul",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "@ui/drawer.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "drawer",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/drawer.tsx"
+      }
+    },
+    {
+      "name": "capcons-dropdown-menu",
+      "type": "registry:ui",
+      "title": "dropdown-menu",
+      "description": "CapCons-enabled shadcn/ui v4 dropdown-menu (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "dropdown-menu",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/dropdown-menu.tsx"
+      }
+    },
+    {
+      "name": "capcons-empty",
+      "type": "registry:ui",
+      "title": "empty",
+      "description": "CapCons-enabled shadcn/ui v4 empty (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/empty.tsx",
+          "type": "registry:ui",
+          "target": "@ui/empty.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "empty",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/empty.tsx"
+      }
+    },
+    {
+      "name": "capcons-field",
+      "type": "registry:ui",
+      "title": "field",
+      "description": "CapCons-enabled shadcn/ui v4 field (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/label",
+        "@capcons/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "field",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/field.tsx"
+      }
+    },
+    {
+      "name": "capcons-form",
+      "type": "registry:ui",
+      "title": "form",
+      "description": "CapCons-enabled shadcn/ui v4 form (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@hookform/resolvers",
+        "zod",
+        "react-hook-form",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button",
+        "@capcons/label"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/form.tsx",
+          "type": "registry:ui",
+          "target": "@ui/form.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "form",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/form.tsx"
+      }
+    },
+    {
+      "name": "capcons-hover-card",
+      "type": "registry:ui",
+      "title": "hover-card",
+      "description": "CapCons-enabled shadcn/ui v4 hover-card (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/hover-card.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "hover-card",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/hover-card.tsx"
+      }
+    },
+    {
+      "name": "capcons-input-group",
+      "type": "registry:ui",
+      "title": "input-group",
+      "description": "CapCons-enabled shadcn/ui v4 input-group (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button",
+        "@capcons/input",
+        "@capcons/textarea"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "input-group",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/input-group.tsx"
+      }
+    },
+    {
+      "name": "capcons-input-otp",
+      "type": "registry:ui",
+      "title": "input-otp",
+      "description": "CapCons-enabled shadcn/ui v4 input-otp (vendored new-york).",
+      "dependencies": [
+        "input-otp",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-otp.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "input-otp",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/input-otp.tsx"
+      }
+    },
+    {
+      "name": "capcons-input",
+      "type": "registry:ui",
+      "title": "input",
+      "description": "CapCons-enabled shadcn/ui v4 input (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "input",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/input.tsx"
+      }
+    },
+    {
+      "name": "capcons-item",
+      "type": "registry:ui",
+      "title": "item",
+      "description": "CapCons-enabled shadcn/ui v4 item (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/separator"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/item.tsx",
+          "type": "registry:ui",
+          "target": "@ui/item.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "item",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/item.tsx"
+      }
+    },
+    {
+      "name": "capcons-kbd",
+      "type": "registry:ui",
+      "title": "kbd",
+      "description": "CapCons-enabled shadcn/ui v4 kbd (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "@ui/kbd.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "kbd",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/kbd.tsx"
+      }
+    },
+    {
+      "name": "capcons-label",
+      "type": "registry:ui",
+      "title": "label",
+      "description": "CapCons-enabled shadcn/ui v4 label (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "label",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/label.tsx"
+      }
+    },
+    {
+      "name": "capcons-menubar",
+      "type": "registry:ui",
+      "title": "menubar",
+      "description": "CapCons-enabled shadcn/ui v4 menubar (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menubar.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "menubar",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/menubar.tsx"
+      }
+    },
+    {
+      "name": "capcons-native-select",
+      "type": "registry:ui",
+      "title": "native-select",
+      "description": "CapCons-enabled shadcn/ui v4 native-select (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/native-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/native-select.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "native-select",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/native-select.tsx"
+      }
+    },
+    {
+      "name": "capcons-navigation-menu",
+      "type": "registry:ui",
+      "title": "navigation-menu",
+      "description": "CapCons-enabled shadcn/ui v4 navigation-menu (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "navigation-menu",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/navigation-menu.tsx"
+      }
+    },
+    {
+      "name": "capcons-pagination",
+      "type": "registry:ui",
+      "title": "pagination",
+      "description": "CapCons-enabled shadcn/ui v4 pagination (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "pagination",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/pagination.tsx"
+      }
+    },
+    {
+      "name": "capcons-popover",
+      "type": "registry:ui",
+      "title": "popover",
+      "description": "CapCons-enabled shadcn/ui v4 popover (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "popover",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/popover.tsx"
+      }
+    },
+    {
+      "name": "capcons-progress",
+      "type": "registry:ui",
+      "title": "progress",
+      "description": "CapCons-enabled shadcn/ui v4 progress (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "progress",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/progress.tsx"
+      }
+    },
+    {
+      "name": "capcons-radio-group",
+      "type": "registry:ui",
+      "title": "radio-group",
+      "description": "CapCons-enabled shadcn/ui v4 radio-group (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "radio-group",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/radio-group.tsx"
+      }
+    },
+    {
+      "name": "capcons-resizable",
+      "type": "registry:ui",
+      "title": "resizable",
+      "description": "CapCons-enabled shadcn/ui v4 resizable (vendored new-york).",
+      "dependencies": [
+        "react-resizable-panels@^4",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/resizable.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "resizable",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/resizable.tsx"
+      }
+    },
+    {
+      "name": "capcons-scroll-area",
+      "type": "registry:ui",
+      "title": "scroll-area",
+      "description": "CapCons-enabled shadcn/ui v4 scroll-area (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "scroll-area",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/scroll-area.tsx"
+      }
+    },
+    {
+      "name": "capcons-select",
+      "type": "registry:ui",
+      "title": "select",
+      "description": "CapCons-enabled shadcn/ui v4 select (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "select",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/select.tsx"
+      }
+    },
+    {
+      "name": "capcons-separator",
+      "type": "registry:ui",
+      "title": "separator",
+      "description": "CapCons-enabled shadcn/ui v4 separator (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "separator",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/separator.tsx"
+      }
+    },
+    {
+      "name": "capcons-sheet",
+      "type": "registry:ui",
+      "title": "sheet",
+      "description": "CapCons-enabled shadcn/ui v4 sheet (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "sheet",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/sheet.tsx"
+      }
+    },
+    {
+      "name": "capcons-sidebar",
+      "type": "registry:ui",
+      "title": "sidebar",
+      "description": "CapCons-enabled shadcn/ui v4 sidebar (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "class-variance-authority",
+        "lucide-react",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/button",
+        "@capcons/separator",
+        "@capcons/sheet",
+        "@capcons/tooltip",
+        "@capcons/input",
+        "@capcons/use-mobile",
+        "@capcons/skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "sidebar",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/sidebar.tsx"
+      }
+    },
+    {
+      "name": "capcons-skeleton",
+      "type": "registry:ui",
+      "title": "skeleton",
+      "description": "CapCons-enabled shadcn/ui v4 skeleton (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "skeleton",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/skeleton.tsx"
+      }
+    },
+    {
+      "name": "capcons-slider",
+      "type": "registry:ui",
+      "title": "slider",
+      "description": "CapCons-enabled shadcn/ui v4 slider (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "slider",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/slider.tsx"
+      }
+    },
+    {
+      "name": "capcons-sonner",
+      "type": "registry:ui",
+      "title": "sonner",
+      "description": "CapCons-enabled shadcn/ui v4 sonner (vendored new-york).",
+      "dependencies": [
+        "sonner",
+        "next-themes",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/sonner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sonner.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "sonner",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/sonner.tsx"
+      }
+    },
+    {
+      "name": "capcons-spinner",
+      "type": "registry:ui",
+      "title": "spinner",
+      "description": "CapCons-enabled shadcn/ui v4 spinner (vendored new-york).",
+      "dependencies": [
+        "class-variance-authority",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "spinner",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/spinner.tsx"
+      }
+    },
+    {
+      "name": "capcons-switch",
+      "type": "registry:ui",
+      "title": "switch",
+      "description": "CapCons-enabled shadcn/ui v4 switch (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "switch",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/switch.tsx"
+      }
+    },
+    {
+      "name": "capcons-table",
+      "type": "registry:ui",
+      "title": "table",
+      "description": "CapCons-enabled shadcn/ui v4 table (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "table",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/table.tsx"
+      }
+    },
+    {
+      "name": "capcons-tabs",
+      "type": "registry:ui",
+      "title": "tabs",
+      "description": "CapCons-enabled shadcn/ui v4 tabs (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "tabs",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/tabs.tsx"
+      }
+    },
+    {
+      "name": "capcons-textarea",
+      "type": "registry:ui",
+      "title": "textarea",
+      "description": "CapCons-enabled shadcn/ui v4 textarea (vendored new-york).",
+      "dependencies": [
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "textarea",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/textarea.tsx"
+      }
+    },
+    {
+      "name": "capcons-toggle-group",
+      "type": "registry:ui",
+      "title": "toggle-group",
+      "description": "CapCons-enabled shadcn/ui v4 toggle-group (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib",
+        "@capcons/toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "toggle-group",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/toggle-group.tsx"
+      }
+    },
+    {
+      "name": "capcons-toggle",
+      "type": "registry:ui",
+      "title": "toggle",
+      "description": "CapCons-enabled shadcn/ui v4 toggle (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "toggle",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/toggle.tsx"
+      }
+    },
+    {
+      "name": "capcons-tooltip",
+      "type": "registry:ui",
+      "title": "tooltip",
+      "description": "CapCons-enabled shadcn/ui v4 tooltip (vendored new-york).",
+      "dependencies": [
+        "radix-ui",
+        "@capcons/sdk",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "registryDependencies": [
+        "@capcons/lib"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/capcons/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ],
+      "meta": {
+        "upstreamComponent": "tooltip",
+        "upstreamSource": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/tooltip.tsx"
+      }
+    }
+  ]
+}
